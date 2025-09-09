@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(228,34,231,1) 23%, rgba(71,74,248,1) 44%, rgba(29,85,253,1) 66%, rgba(90,69,246,1) 79%, rgba(69,176,252,1) 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    width: 450px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    opacity: 90%;
+    box-shadow: 5px 10px 25px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.inputForm {
+    width: 380px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 7px 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputForm:focus {
+    border: 2px solid #833AB4;
+    box-shadow: 2px 3px 12px #833AB4;
+    outline: none;
+}
+
+.botao-recuperar {
+    height: 45px;
+    width: 320px;
+    border-radius: 15px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    background-color: rgb(107, 110, 112);
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.5s, background 1.5s ease-in-out, box-shadow 1s ease;
+}
+
+.botao-recuperar:hover {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(1,181,234,1) 69%, rgba(0,212,255,1) 100%);
+    color: #fff;
+    font-weight: bold;
+}
+
+.links {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.links a {
+    color: #833AB4;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+input::selection {
+    background: transparent;
+}
