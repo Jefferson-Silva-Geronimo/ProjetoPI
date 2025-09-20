@@ -8,48 +8,40 @@
     <title>Tela de Login</title>
 </head>
 <body>
-
-
-    <div class="nome-marca" id="marca"><h1>HYPE DUNK</h1></div>
-
-    <div class="logo-marca">
-        <img id="logo" src="img/logo.png" alt="logo">
+  <div class="container">
+    <!-- logo + nome lado a lado -->
+    <div class="marca">
+      <img src="img/logo.png" alt="logo">
+      <h1>HYPE DUNK</h1>
     </div>
 
+    <!-- formulário -->
     <div class="wrapper">
-        <h1>Login</h1>
-
-        <form id="loginForm" action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Usuário" id="nomeUsuario" required>
-                <i class="fa fa-user"></i>
-            </div>
-
-            <div class="input-box">
-                <input type="password" placeholder="Senha" id="senhaUsuario">
-                <i class="fa fa-lock"></i>
-            </div>
-
-            <div class="esqueceu-senha">
-                <label><input type="checkbox"></label>
-                <a href="#">Esqueceu a senha?</a>
-            </div>
-
-            <button type="submit" id="btnLogin" class="btn">Entrar</button>
-
-            <div class="redes-sociais">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-x"></i></a>
-                <a href="#"><i class="fab fa-google"></i></a>
-            </div>
-
-            <div class="registrar-conta">
-                <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
-            </div>
-
-            <p id="saida" style="text-align:center; margin-top:15px; color:#fff;"></p>
-        </form>
+      <h1>Login</h1>
+      <form>
+        <div class="input-box">
+          <input type="text" placeholder="Usuário" required>
+          <i class="fa fa-user"></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Senha" required>
+          <i class="fa fa-lock"></i>
+        </div>
+        <div class="esqueceu-senha">
+          <label><input type="checkbox"> Lembre-se de Mim</label>
+          <a href="../tela-recuperacao-senha/RecuperaSenha.html">Esqueceu a senha?</a>
+        </div>
+        <button type="submit" class="btn" onclick="window.location.href='../tela-principal/index.html'; return false;">Entrar</button>
+        <div class="redes-sociais">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
+        </div>
+        <div class="registrar-conta">
+          <p>Não tem uma conta? <a href="../tela-cadastro/cadastro.html">Cadastre-se</a></p>
+        </div>
+      </form>
     </div>
-    <script src="index.js"></script>
+  </div>
 </body>
 </html>
