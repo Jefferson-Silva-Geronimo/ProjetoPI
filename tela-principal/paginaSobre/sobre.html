@@ -23,6 +23,12 @@
             <li><a href="../paginaCarrinho/carrinho.html">Carrinho</a></li>
         </ul>
         </nav>
+        
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
 
         <a href="#" class="btn">Comprar Agora</a>
   </header>
@@ -83,5 +89,14 @@
   <footer>
     <p>&copy; 2025 Hype Dunk. Todos os direitos reservados.</p>
   </footer>
+  
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+</script>
 </body>
 </html>

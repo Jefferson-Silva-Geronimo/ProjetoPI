@@ -1,3 +1,4 @@
+/* Reset e fontes */
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,7 @@
 body {
   background-color: #f9f9f9;
   color: #111;
+  line-height: 1.6;
 }
 
 /* Header */
@@ -23,6 +25,7 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -60,6 +63,23 @@ nav ul li a:hover {
   color: #f97316;
 }
 
+/* Hamburger (menu sanduíche) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Botões */
 .btn {
   background-color: #f97316;
   padding: 10px 20px;
@@ -186,4 +206,52 @@ footer {
   text-align: center;
   padding: 20px;
   margin-top: 50px;
+}
+
+/* Responsividade + Menu Hamburger */
+@media (max-width: 1024px) {
+  .destaques { padding: 60px 30px; }
+  .cta { padding: 50px 20px; }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+
+  nav ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 220px;
+    display: none;
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px;
+  }
+
+  nav ul li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  header {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+  }
+
+  .grid-destaques { gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero h2 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .destaques h2 { font-size: 1.5rem; }
+  .card h3 { font-size: 1.2rem; }
+  .card p { font-size: 0.95rem; }
+  .cta h2 { font-size: 1.5rem; }
+  .cta p { font-size: 1rem; }
 }
