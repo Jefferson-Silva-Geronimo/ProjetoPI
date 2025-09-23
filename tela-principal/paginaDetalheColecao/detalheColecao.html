@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coleções - Hype Dunk</title>
+  <link rel="stylesheet" href="detalheColecao.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="../paginaInicial/index.html" class="logo-link">
+      <div class="logo">
+        <img src="logo.png" alt="Hype Dunk Logo">
+        <h1>HYPE DUNK</h1>
+      </div>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../paginaInicial/index.html">Início</a></li>
+        <li><a href="../paginaLancamento/lancamento.html">Lançamentos</a></li>
+        <li><a href="colecoes.html" class="active">Coleções</a></li>
+        <li><a href="../paginaSobre/sobre.html">Sobre</a></li>
+        <li><a href="../paginaContato/contato.html">Contato</a></li>
+        <li><a href="../paginaCarrinho/carrinho.html">Carrinho</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <a href="../paginaCarrinho/carrinho.html" class="btn">Comprar Agora</a>
+  </header>
+
+  <!-- Lista de Coleções -->
+  <section class="colecoes-lista">
+    <h2>Nossas Coleções</h2>
+    <div class="grid-colecoes">
+
+      <div class="card-colecao">
+        <img src="assets/streetwear.jpg" alt="Streetwear">
+        <h3>Streetwear</h3>
+        <p>Estilo urbano para o dia a dia.</p>
+        <button class="btn" onclick="abrirColecao('colecao-streetwear')">Explorar</button>
+      </div>
+
+      <div class="card-colecao">
+        <img src="assets/performance.jpg" alt="Performance">
+        <h3>Performance</h3>
+        <p>Máximo desempenho para esportes.</p>
+        <button class="btn" onclick="abrirColecao('colecao-performance')">Explorar</button>
+      </div>
+
+      <div class="card-colecao">
+        <img src="assets/premium.jpg" alt="Premium">
+        <h3>Premium</h3>
+        <p>Exclusividade e sofisticação.</p>
+        <button class="btn" onclick="abrirColecao('colecao-premium')">Explorar</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Detalhes das Coleções -->
+  <section id="colecao-streetwear" class="colecao-detalhe">
+    <h2>Coleção Streetwear</h2>
+    <p>Estilo urbano, conforto e autenticidade. Perfeito para quem quer se destacar nas ruas.</p>
+
+    <div class="grid-produtos">
+      <a href="../paginaDetalheTenis/detalheTenis.html" class="card">
+        <img src="assets/tenis1.jpg" alt="Nike Dunk Low">
+        <h3>Nike Dunk Low</h3>
+        <p>R$ 899,90</p>
+        <span class="btn">Comprar</span>
+      </a>
+
+      <a href="../paginaDetalheTenis/detalheTenis.html" class="card">
+        <img src="assets/tenis2.jpg" alt="Air Jordan 1">
+        <h3>Air Jordan 1</h3>
+        <p>R$ 1.299,90</p>
+        <span class="btn">Comprar</span>
+      </a>
+    </div>
+
+    <button class="btn btn-voltar" onclick="voltar()">Voltar</button>
+  </section>
+
+  <section id="colecao-performance" class="colecao-detalhe">
+    <h2>Coleção Performance</h2>
+    <p>Modelos projetados para oferecer resistência, leveza e máximo rendimento nos treinos.</p>
+
+    <div class="grid-produtos">
+      <a href="../paginaDetalheTenis/detalheTenis.html" class="card">
+        <img src="assets/tenis3.jpg" alt="Nike Air Force">
+        <h3>Nike Air Force</h3>
+        <p>R$ 799,90</p>
+        <span class="btn">Comprar</span>
+      </a>
+
+      <a href="../paginaDetalheTenis/detalheTenis.html" class="card">
+        <img src="assets/tenis4.jpg" alt="Puma RS-X">
+        <h3>Puma RS-X</h3>
+        <p>R$ 699,90</p>
+        <span class="btn">Comprar</span>
+      </a>
+    </div>
+
+    <button class="btn btn-voltar" onclick="voltar()">Voltar</button>
+  </section>
+
+  <section id="colecao-premium" class="colecao-detalhe">
+    <h2>Coleção Premium</h2>
+    <p>Design exclusivo, materiais nobres e sofisticação para quem busca algo único.</p>
+
+    <div class="grid-produtos">
+      <a href="../paginaDetalheTenis/detalheTenis.html" class="card">
+        <img src="assets/tenis2.jpg" alt="Air Jordan 1 Premium">
+        <h3>Air Jordan 1 Premium</h3>
+        <p>R$ 1.499,90</p>
+        <span class="btn">Comprar</span>
+      </a>
+
+      <a href="../paginaDetalheTenis/detalheTenis.html" class="card">
+        <img src="assets/tenis1.jpg" alt="Nike Dunk Low Premium">
+        <h3>Nike Dunk Low Premium</h3>
+        <p>R$ 999,90</p>
+        <span class="btn">Comprar</span>
+      </a>
+    </div>
+
+    <button class="btn btn-voltar" onclick="voltar()">Voltar</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Hype Dunk. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    function abrirColecao(id) {
+      document.querySelector('.colecoes-lista').style.display = "none";
+      document.querySelectorAll('.colecao-detalhe').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function voltar() {
+      document.querySelector('.colecoes-lista').style.display = "block";
+      document.querySelectorAll('.colecao-detalhe').forEach(sec => sec.classList.remove('active'));
+    }
+  </script>
+</body>
+</html>

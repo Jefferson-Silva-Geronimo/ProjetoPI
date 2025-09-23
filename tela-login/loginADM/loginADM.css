@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgba(255, 140, 0, 0.9) 50%, transparent 50%),
+    url("../img/pexels-hamza01nsr-12611630.jpg") no-repeat center right;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+/* Logo + nome lado a lado */
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.marca img {
+  max-width: 100px;
+  height: auto;
+}
+
+.marca h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 3px 3px 8px rgba(112, 112, 112, 0.7);
+  letter-spacing: 3px;
+}
+
+/* Card de login */
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  background: #08101a;
+  padding: 40px 35px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.wrapper h1 {
+  font-family: "League Gothic", sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Nota área ADM */
+.adm-note {
+  text-align: center;
+  color: #ff9e00;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* Inputs */
+.input-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 35px;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 45px 0 20px;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.input-box input::placeholder {
+  color: #fff3e0;
+  font-weight: 300;
+}
+
+.input-box input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.input-box i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #ffd7b3;
+}
+
+/* Esqueceu a senha / lembre-me */
+.esqueceu-senha {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: #ffe0cc;
+}
+
+.esqueceu-senha a {
+  color: #fff3e0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.esqueceu-senha a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Botão */
+.btn {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(#ff8c42, #ff5e00);
+  border: none;
+  border-radius: 35px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(#ff9e66, #ff3d00);
+}
+
+/* Card de troca de área */
+.area-card {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.7);
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+  z-index: 100;
+}
+
+.area-card a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.area-card:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(to bottom, rgba(255, 140, 0, 0.9), transparent),
+      url("../img/pexels-hamza01nsr-12611630.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .marca h1 {
+    font-size: 2rem;
+  }
+
+  .wrapper h1 {
+    font-size: 2rem;
+  }
+}

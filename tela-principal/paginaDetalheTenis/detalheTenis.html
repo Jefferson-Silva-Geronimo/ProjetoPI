@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Produto - Hype Dunk</title>
+  <link rel="stylesheet" href="detalheTenis.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="../paginaInicial/index.html" class="logo-link">
+      <div class="logo">
+        <img src="logo.png" alt="Hype Dunk Logo">
+        <h1>HYPE DUNK</h1>
+      </div>
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="../paginaInicial/index.html">Início</a></li>
+        <li><a href="../paginaLancamento/lancamento.html">Lançamentos</a></li>
+        <li><a href="../paginaDeColecoes/colecoes.html">Coleções</a></li>
+        <li><a href="../paginaSobre/sobre.html">Sobre</a></li>
+        <li><a href="../paginaInicial/contato.html">Contato</a></li>
+        <li><a href="../paginaCarrinho/carrinho.html">Carrinho</a></li>
+      </ul>
+    </nav>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <a href="../paginaCarrinho/carrinho.html" class="btn">Comprar Agora</a>
+  </header>
+
+  <!-- Produto Detalhe -->
+  <section class="produto-detalhe">
+    <div class="container">
+      <!-- Imagem -->
+      <div class="imagem-produto">
+        <img src="assets/tenis1.jpg" alt="Nike Dunk Low">
+      </div>
+
+      <!-- Informações -->
+      <div class="info-produto">
+        <h2>Nike Dunk Low</h2>
+        <p class="descricao">
+          Inspirado na cultura streetwear, este tênis combina conforto e estilo. Ideal para o dia a dia ou ocasiões especiais.
+        </p>
+        <p class="preco">R$ 899,90</p>
+
+        <!-- Seleção de tamanho -->
+        <label for="tamanho">Tamanho:</label>
+        <select id="tamanho">
+          <option value="37">37</option>
+          <option value="38">38</option>
+          <option value="39">39</option>
+          <option value="40">40</option>
+          <option value="41">41</option>
+          <option value="42">42</option>
+        </select>
+
+        <!-- Quantidade -->
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" value="1" min="1">
+
+        <!-- Botões -->
+        <div class="botoes-produto">
+          <a href="../paginaCarrinho/carrinho.html" class="btn">Adicionar ao Carrinho</a>
+          <a href="../paginaDeColecoes/colecoes.html" class="btn secundario">Continuar Comprando</a>
+        </div>
+
+        <!-- Informações adicionais -->
+        <div class="info-adicional">
+          <h3>Detalhes do Produto</h3>
+          <ul>
+            <li>Material: Couro sintético e mesh</li>
+            <li>Solado: Borracha antiderrapante</li>
+            <li>Garantia: 12 meses</li>
+            <li>Disponível em vários tamanhos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Hype Dunk. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

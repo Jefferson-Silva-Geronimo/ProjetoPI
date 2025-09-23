@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(to right, rgba(255, 140, 0, 0.9) 50%, transparent 50%),
-    url("img/pexels-hamza01nsr-12611630.jpg") no-repeat center right;
+    url("../img/pexels-hamza01nsr-12611630.jpg") no-repeat center right;
   background-size: cover;
   overflow: auto;
 }
@@ -152,7 +152,7 @@ body {
 @media (max-width: 768px) {
   body {
     background: linear-gradient(to bottom, rgba(255, 140, 0, 0.9), transparent),
-      url("img/pexels-hamza01nsr-12611630.jpg") no-repeat center;
+      url("../img/pexels-hamza01nsr-12611630.jpg") no-repeat center;
     background-size: cover;
   }
 
