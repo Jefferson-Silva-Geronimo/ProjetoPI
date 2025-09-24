@@ -5,7 +5,13 @@
   font-family: "Poppins", sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
 body { 
+  display: flex;
+  flex-direction: column;
   background: #f9f9f9; 
   color: #111; 
 }
@@ -99,7 +105,8 @@ nav a:hover { color: #f97316; }
 .hero p { font-size: 1rem; }
 
 /* Carrinho */
-.carrinho { padding: 0 40px 40px; }
+.carrinho { padding: 0 40px 40px; flex: 1; }
+
 .container {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -158,15 +165,12 @@ footer {
   padding: 20px 15px;
   font-size: 0.95rem;
   border-top: 2px solid #f97316;
-  margin-top: 50px; /* espaço acima do footer */
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
+  margin-top: auto;
 }
 
 footer p { margin: 0; }
 
-.logo-link{
+.logo-link {
   text-decoration: none;
   color: #fff;
 }

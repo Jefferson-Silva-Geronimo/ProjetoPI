@@ -5,7 +5,13 @@
   font-family: "Poppins", sans-serif;
 }
 
+html, body {
+  height: 100%; /* altura mínima da tela */
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   background: #f9f9f9;
   color: #111;
 }
@@ -91,6 +97,7 @@ nav a:hover {
 .produtos {
   padding: 40px 20px;
   text-align: center;
+  flex: 1; /* garante que essa seção empurre o footer para baixo */
 }
 
 .produtos h2 {
@@ -150,17 +157,15 @@ footer {
   padding: 20px 15px;
   font-size: 0.95rem;
   border-top: 2px solid #f97316;
-  margin-top: 50px; /* Espaço acima do footer */
-  position: absolute;
-  bottom: 0px;
   width: 100%;
+  margin-top: auto; /* gruda no fim da página */
 }
 
 footer p {
   margin: 0;
 }
 
-.logo-link{
+.logo-link {
   text-decoration: none;
   color: #fff;
 }
