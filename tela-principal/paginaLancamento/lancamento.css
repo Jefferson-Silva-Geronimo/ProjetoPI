@@ -96,7 +96,7 @@ nav ul li a:hover {
 
 /* Hero */
 .hero {
-  background: url("assets/hero.jpg") center/cover no-repeat;
+  background: url("img/background_lancamentos.png") center/cover no-repeat;
   height: 80vh;
   display: flex;
   align-items: center;
