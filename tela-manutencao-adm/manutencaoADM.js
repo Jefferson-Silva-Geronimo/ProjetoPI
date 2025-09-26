@@ -1,10 +1,17 @@
 const produtos = [
-  { nome: "Nike Dunk Low", preco: 899.9, imagem: "img/tenis1.jpg" },
-  { nome: "Air Jordan 1", preco: 1299.9, imagem: "img/tenis2.jpg" },
-  { nome: "Nike Air Force", preco: 799.9, imagem: "img/tenis3.jpg" },
-  { nome: "Nike Dunk Low", preco: 899.9, imagem: "img/tenis1.jpg" },
-  { nome: "Air Jordan 1", preco: 1299.9, imagem: "img/tenis2.jpg" },
-  { nome: "Nike Air Force", preco: 799.9, imagem: "img/tenis3.jpg" }
+  { nome: "Nike Dunk Low", preco: 899.9 },
+  { nome: "Air Jordan 1", preco: 1299.9 },
+  { nome: "Nike Air Force", preco: 799.9 },
+  { nome: "Nike Dunk Low", preco: 899.9 },
+  { nome: "Air Jordan 1", preco: 1299.9 },
+  { nome: "Nike Air Force", preco: 799.9 }
+];
+
+// Caminhos das imagens intercaladas
+const imagens = [
+  "../../img-tenis/tipo-tenis-1.jpg",
+  "../../img-tenis/tipo-tenis-2.jpg",
+  "../../img-tenis/tipo-tenis-3.jpg"
 ];
 
 const grid = document.getElementById("grid-produtos");
@@ -20,10 +27,13 @@ let editIndex = null;
 function renderProdutos() {
   grid.innerHTML = "";
   produtos.forEach((p, i) => {
+    // Atribui imagem intercalada automaticamente
+    const imagemSrc = imagens[i % imagens.length];
+
     const card = document.createElement("div");
     card.className = "card-produto";
     card.innerHTML = `
-      <img src="${p.imagem}" alt="${p.nome}">
+      <img src="${imagemSrc}" alt="${p.nome}">
       <h3>${p.nome}</h3>
       <p>R$ ${p.preco.toFixed(2)}</p>
       <div class="acoes">
@@ -44,7 +54,7 @@ function renderProdutos() {
       modalTitle.textContent = "Editar Produto";
       form.nome.value = p.nome;
       form.preco.value = p.preco;
-      form.imagem.value = p.imagem;
+      form.imagem.value = imagemSrc; // Mantém a imagem intercalada no modal
       modal.style.display = "block";
     });
   });
@@ -66,8 +76,7 @@ form.onsubmit = (e) => {
   e.preventDefault();
   const novo = {
     nome: form.nome.value,
-    preco: parseFloat(form.preco.value),
-    imagem: form.imagem.value
+    preco: parseFloat(form.preco.value)
   };
   if(editIndex !== null){
     produtos[editIndex] = novo;

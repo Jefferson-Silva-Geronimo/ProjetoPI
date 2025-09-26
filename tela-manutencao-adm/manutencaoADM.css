@@ -91,11 +91,17 @@ main {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+
+/* Ajuste de imagem padronizada */
 .card-produto img {
   width: 100%;
+  height: 200px; /* altura fixa para padronização */
+  object-fit: contain; /* mantém proporção sem cortar */
+  background: #f9f9f9; /* fundo neutro para harmonizar se houver espaço */
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
 .card-produto h3 {
   margin-bottom: 10px;
   font-size: 1.1rem;
@@ -140,9 +146,8 @@ footer {
   padding: 20px 15px;
   font-size: 0.95rem;
   border-top: 2px solid #f97316;
-  margin-top: 50px; /* espaço acima do footer */
+  margin-top: 50px;
 }
-
 footer p {
   margin: 0;
 }
@@ -201,6 +206,7 @@ footer p {
   text-decoration: none;
   color: #fff;
 }
+
 /* Responsividade */
 @media (max-width: 768px) {
   header {

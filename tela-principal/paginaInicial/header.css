@@ -134,6 +134,8 @@ nav a:hover {
 
 .card img {
   width: 100%;
+  height: 180px;          /* altura fixa para padronização */
+  object-fit: cover;      /* mantém proporção e corta excesso */
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -211,6 +213,10 @@ footer p {
 
   .grid-produtos {
     gap: 15px;
+  }
+
+  .card img {
+    height: 150px; /* ajusta imagens em telas menores */
   }
 
   .card h3 {

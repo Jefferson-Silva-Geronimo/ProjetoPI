@@ -14,7 +14,7 @@ html, body {
 body {
   background: #f9f9f9;
   color: #111;
-  flex: 1; /* garante que o body ocupe a altura completa */
+  flex: 1;
 }
 
 /* Header */
@@ -99,7 +99,7 @@ nav a.active {
 .colecoes-lista {
   padding: 40px 20px;
   text-align: center;
-  flex: 1; /* faz a seção ocupar espaço disponível, empurrando o footer */
+  flex: 1;
 }
 
 .colecoes-lista h2 {
@@ -127,8 +127,12 @@ nav a.active {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* Ajuste do tamanho das imagens das coleções */
 .card-colecao img {
   width: 100%;
+  height: auto;        /* altura automática para manter proporção */
+  max-height: 220px;   /* limita altura máxima */
+  object-fit: contain;  /* mantém proporção sem cortar */
   border-radius: 10px;
   margin-bottom: 15px;
 }
@@ -178,7 +182,7 @@ nav a.active {
   background: #fff;
   border-radius: 12px;
   padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -188,11 +192,15 @@ nav a.active {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* Ajuste do tamanho das imagens dos produtos */
 .card img {
   width: 100%;
+  height: auto;        /* altura automática para manter proporção */
+  max-height: 220px;   /* limita altura máxima */
+  object-fit: contain;  /* mantém proporção sem cortar */
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -216,7 +224,7 @@ footer {
   padding: 20px 15px;
   font-size: 0.95rem;
   border-top: 2px solid #f97316;
-  margin-top: auto; /* garante que fique no fim da página */
+  margin-top: auto;
 }
 
 footer p { margin: 0; }
