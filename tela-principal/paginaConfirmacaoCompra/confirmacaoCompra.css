@@ -36,6 +36,7 @@ header {
 }
 .logo img {
   height: 50px;
+  border-radius: 5px;
 }
 .logo h1 {
   color: #f97316;
