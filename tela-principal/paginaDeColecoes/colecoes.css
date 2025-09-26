@@ -95,7 +95,7 @@ nav ul li a:hover {
 /* Hero */
 .hero {
   background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(249, 115, 22, 0.6)),
-              url("../../img-tenis/tipo-tenis-5.jpg") center/cover no-repeat;
+              url("img/colecoes.png") center/cover no-repeat;
   height: 70vh;
   display: flex;
   align-items: center;
