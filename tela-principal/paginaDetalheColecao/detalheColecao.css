@@ -133,7 +133,7 @@ nav a.active {
   width: 100%;
   height: auto;        /* altura automática para manter proporção */
   max-height: 220px;   /* limita altura máxima */
-  object-fit: contain;  /* mantém proporção sem cortar */
+  object-fit: cover;  /* mantém proporção sem cortar */
   border-radius: 10px;
   margin-bottom: 15px;
 }

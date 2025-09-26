@@ -140,7 +140,7 @@ nav a:hover { color: #f97316; }
 .carrinho-items img {
   width: 100px;
   height: 100px;
-  object-fit: contain;
+  object-fit: cover;
   margin-right: 15px;
   border-radius: 12px;
 }
