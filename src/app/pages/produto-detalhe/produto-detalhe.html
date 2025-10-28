@@ -1,0 +1,37 @@
+<section class="produto-detalhe" *ngIf="produto">
+  <div class="container">
+    <div class="produto-imagem">
+      <img [src]="produto.imagem" [alt]="produto.nome">
+    </div>
+    
+    <div class="produto-info">
+      <h1>{{ produto.nome }}</h1>
+      <p class="preco">R$ {{ produto.preco.toFixed(2) }}</p>
+      <p class="descricao" *ngIf="produto.descricao">{{ produto.descricao }}</p>
+      
+      <div class="tamanhos" *ngIf="produto.tamanhos && produto.tamanhos.length > 0">
+        <h3>Selecione o tamanho:</h3>
+        <div class="tamanhos-grid">
+          <button 
+            *ngFor="let tamanho of produto.tamanhos" 
+            [class.selecionado]="tamanhoSelecionado === tamanho"
+            (click)="tamanhoSelecionado = tamanho">
+            {{ tamanho }}
+          </button>
+        </div>
+      </div>
+      
+      <div class="acoes">
+        <button class="btn-adicionar" (click)="adicionarAoCarrinho()">
+          🛒 Adicionar ao Carrinho
+        </button>
+        <a routerLink="/home" class="btn-voltar">← Voltar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="!produto" class="produto-nao-encontrado">
+  <h2>Produto não encontrado</h2>
+  <a routerLink="/home" class="btn">Voltar para Home</a>
+</div>

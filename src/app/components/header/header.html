@@ -1,0 +1,27 @@
+<header>
+  <a routerLink="/home" class="logo-link">
+    <div class="logo">
+      <img src="/img-tenis/logo.png" alt="Hype Dunk Logo">
+      <h1>HYPE DUNK</h1>
+    </div>
+  </a>
+
+  <nav>
+    <ul class="nav-links" [class.active]="menuAberto">
+      <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Início</a></li>
+      <li *ngIf="isAdmin"><a routerLink="/admin/produtos" routerLinkActive="active">Admin</a></li>
+      <li><a routerLink="/carrinho" routerLinkActive="active">Carrinho</a></li>
+      <li *ngIf="!usuarioLogado"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li *ngIf="usuarioLogado"><a (click)="logout()" style="cursor: pointer;">Sair</a></li>
+    </ul>
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <a routerLink="/carrinho" class="btn">
+    Carrinho <span *ngIf="quantidadeCarrinho > 0">({{ quantidadeCarrinho }})</span>
+  </a>
+</header>

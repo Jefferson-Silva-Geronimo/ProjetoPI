@@ -1,0 +1,169 @@
+.produto-detalhe {
+  padding: 40px 20px;
+  min-height: calc(100vh - 200px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.produto-imagem img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.produto-info h1 {
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.preco {
+  font-size: 2rem;
+  color: #f97316;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.descricao {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.tamanhos {
+  margin-bottom: 30px;
+}
+
+.tamanhos h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.tamanhos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 10px;
+}
+
+.tamanhos-grid button {
+  padding: 12px;
+  border: 2px solid #ddd;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tamanhos-grid button:hover {
+  border-color: #f97316;
+  background: #fff5f0;
+}
+
+.tamanhos-grid button.selecionado {
+  border-color: #f97316;
+  background: #f97316;
+  color: #fff;
+}
+
+.acoes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-adicionar,
+.btn-voltar {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-adicionar {
+  flex: 1;
+  background: #10b981;
+  color: #fff;
+}
+
+.btn-adicionar:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.btn-voltar {
+  background: #6b7280;
+  color: #fff;
+}
+
+.btn-voltar:hover {
+  background: #4b5563;
+}
+
+.produto-nao-encontrado {
+  text-align: center;
+  padding: 100px 20px;
+  min-height: calc(100vh - 200px);
+}
+
+.produto-nao-encontrado h2 {
+  font-size: 2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 15px 30px;
+  background: #f97316;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #e55d00;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .produto-info h1 {
+    font-size: 2rem;
+  }
+
+  .preco {
+    font-size: 1.5rem;
+  }
+
+  .acoes {
+    flex-direction: column;
+  }
+
+  .btn-adicionar,
+  .btn-voltar {
+    width: 100%;
+  }
+}

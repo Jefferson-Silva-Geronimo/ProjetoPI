@@ -1,0 +1,237 @@
+.admin-container {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 200px);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.admin-header h2 {
+  font-size: 2rem;
+  color: #111;
+}
+
+.btn-incluir {
+  padding: 12px 24px;
+  background: #f97316;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+}
+
+.btn-incluir:hover {
+  background: #e55d00;
+  transform: translateY(-2px);
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card-produto {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-produto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card-produto h3 {
+  font-size: 1.2rem;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.card-produto .preco {
+  font-size: 1.3rem;
+  color: #f97316;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.acoes {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-editar,
+.btn-excluir {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-editar {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.btn-editar:hover {
+  background: #2563eb;
+}
+
+.btn-excluir {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn-excluir:hover {
+  background: #dc2626;
+}
+
+/* Modal */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #111;
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+  color: #111;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #f97316;
+}
+
+.modal-acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.btn-salvar,
+.btn-cancelar {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-salvar {
+  background: #10b981;
+  color: #fff;
+}
+
+.btn-salvar:hover {
+  background: #059669;
+}
+
+.btn-cancelar {
+  background: #6b7280;
+  color: #fff;
+}
+
+.btn-cancelar:hover {
+  background: #4b5563;
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grid-produtos {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+}

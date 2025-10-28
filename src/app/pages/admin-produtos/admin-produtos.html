@@ -1,0 +1,57 @@
+<section class="admin-container">
+  <div class="admin-header">
+    <h2>Manutenção de Produtos</h2>
+    <button class="btn-incluir" (click)="abrirModalIncluir()">+ Incluir Novo Produto</button>
+  </div>
+
+  <div class="grid-produtos">
+    <div *ngFor="let produto of produtos" class="card-produto">
+      <img [src]="produto.imagem" [alt]="produto.nome">
+      <h3>{{ produto.nome }}</h3>
+      <p class="preco">R$ {{ produto.preco.toFixed(2) }}</p>
+      <div class="acoes">
+        <button class="btn-editar" (click)="abrirModalEditar(produto)">
+          ✏️ Editar
+        </button>
+        <button class="btn-excluir" (click)="excluirProduto(produto.id, produto.nome)">
+          🗑️ Excluir
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal" *ngIf="modalAberto" (click)="fecharModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close" (click)="fecharModal()">&times;</span>
+    <h3>{{ modoEdicao ? 'Editar Produto' : 'Novo Produto' }}</h3>
+    
+    <form (ngSubmit)="salvarProduto()">
+      <div class="form-group">
+        <label>Nome *</label>
+        <input type="text" [(ngModel)]="produtoAtual.nome" name="nome" required>
+      </div>
+
+      <div class="form-group">
+        <label>Preço (R$) *</label>
+        <input type="number" [(ngModel)]="produtoAtual.preco" name="preco" step="0.01" required>
+      </div>
+
+      <div class="form-group">
+        <label>URL da Imagem *</label>
+        <input type="text" [(ngModel)]="produtoAtual.imagem" name="imagem" required>
+      </div>
+
+      <div class="form-group">
+        <label>Descrição</label>
+        <textarea [(ngModel)]="produtoAtual.descricao" name="descricao" rows="3"></textarea>
+      </div>
+
+      <div class="modal-acoes">
+        <button type="submit" class="btn-salvar">Salvar</button>
+        <button type="button" class="btn-cancelar" (click)="fecharModal()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
