@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CarrinhoService } from '../../services/carrinho.service';
 import { ItemCarrinho } from '../../models/item-carrinho.model';
+
 
 @Component({
   selector: 'app-carrinho',
@@ -16,7 +17,8 @@ export class Carrinho implements OnInit {
   frete = 29.90;
   total = 0;
 
-  constructor(private carrinhoService: CarrinhoService) {}
+  constructor(private carrinhoService: CarrinhoService, private router: Router) {}
+
 
   ngOnInit(): void {
     this.carrinhoService.itens$.subscribe(itens => {
@@ -47,7 +49,7 @@ export class Carrinho implements OnInit {
       alert('Seu carrinho está vazio!');
       return;
     }
-    alert('Compra finalizada com sucesso! Total: R$ ' + this.total.toFixed(2));
     this.carrinhoService.limparCarrinho();
+    this.router.navigate(['/confirmacao-compra']);
   }
 }

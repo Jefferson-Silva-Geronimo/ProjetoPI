@@ -26,7 +26,7 @@
   <div class="modal-content" (click)="$event.stopPropagation()">
     <span class="close" (click)="fecharModal()">&times;</span>
     <h3>{{ modoEdicao ? 'Editar Produto' : 'Novo Produto' }}</h3>
-    
+
     <form (ngSubmit)="salvarProduto()">
       <div class="form-group">
         <label>Nome *</label>
@@ -46,6 +46,34 @@
       <div class="form-group">
         <label>Descrição</label>
         <textarea [(ngModel)]="produtoAtual.descricao" name="descricao" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Tamanhos disponíveis</label>
+
+        <!-- Campo para digitar e adicionar -->
+        <div class="linha-tamanho">
+          <input
+            type="number"
+            [(ngModel)]="tamanhoTemp"
+            name="tamanhoTemp"
+            placeholder="Ex: 38"
+            min="30"
+            max="50"
+          />
+          <button type="button" (click)="adicionarTamanho()">Adicionar</button>
+        </div>
+
+        <!-- Lista de tamanhos já adicionados -->
+        <div class="lista-tamanhos" *ngIf="produtoAtual.tamanhos?.length">
+          <span
+            *ngFor="let tamanho of produtoAtual.tamanhos"
+            class="item-tamanho"
+          >
+            {{ tamanho }}
+            <button type="button" (click)="removerTamanho(tamanho)">✕</button>
+          </span>
+        </div>
       </div>
 
       <div class="modal-acoes">

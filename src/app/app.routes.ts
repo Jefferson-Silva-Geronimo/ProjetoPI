@@ -7,6 +7,7 @@ import { AdminProdutos } from './pages/admin-produtos/admin-produtos';
 import { Carrinho } from './pages/carrinho/carrinho';
 import { ProdutoDetalhe } from './pages/produto-detalhe/produto-detalhe';
 import { adminGuard } from './guards/admin.guard';
+import { ConfirmacaoCompra } from './pages/confirmacao-compra/confirmacao-compra';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,10 +17,11 @@ export const routes: Routes = [
   { path: 'cadastro', component: Cadastro },
   { path: 'carrinho', component: Carrinho },
   { path: 'produto/:id', component: ProdutoDetalhe },
-  { 
-    path: 'admin/produtos', 
+  {
+    path: 'admin/produtos',
     component: AdminProdutos,
     canActivate: [adminGuard]
   },
+  { path: 'confirmacao-compra', component: ConfirmacaoCompra },
   { path: '**', redirectTo: '/home' }
 ];

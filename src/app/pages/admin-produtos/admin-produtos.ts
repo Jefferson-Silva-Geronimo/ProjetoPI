@@ -16,6 +16,7 @@ export class AdminProdutos implements OnInit {
   modoEdicao = false;
   produtoAtual: Partial<Produto> = {};
   produtoEditandoId: number | null = null;
+  tamanhoTemp: number | null = null;
 
   constructor(private produtoService: ProdutoService) {}
 
@@ -86,5 +87,28 @@ export class AdminProdutos implements OnInit {
         alert('Erro ao excluir produto!');
       }
     }
+  }
+  adicionarTamanho(): void {
+    if (this.tamanhoTemp == null || this.tamanhoTemp <= 0) {
+      alert('Informe um tamanho válido!');
+      return;
+    }
+
+    if (!this.produtoAtual.tamanhos) {
+      this.produtoAtual.tamanhos = [];
+    }
+
+    if (this.produtoAtual.tamanhos.includes(this.tamanhoTemp)) {
+      alert('Este tamanho já foi adicionado!');
+      return;
+    }
+
+    this.produtoAtual.tamanhos.push(this.tamanhoTemp);
+    this.tamanhoTemp = null;
+  }
+
+  removerTamanho(tamanho: number): void {
+    if (!this.produtoAtual.tamanhos) return;
+    this.produtoAtual.tamanhos = this.produtoAtual.tamanhos.filter(t => t !== tamanho);
   }
 }

@@ -220,6 +220,80 @@
   background: #4b5563;
 }
 
+/* ============================= */
+/* SEÇÃO DE TAMANHOS DO PRODUTO */
+/* ============================= */
+
+.linha-tamanho {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.linha-tamanho input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.linha-tamanho input:focus {
+  outline: none;
+  border-color: #f97316;
+}
+
+.linha-tamanho button {
+  padding: 10px 18px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.linha-tamanho button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Lista de tamanhos adicionados */
+.lista-tamanhos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.item-tamanho {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f3f4f6;
+  border: 1px solid #ddd;
+  color: #111;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.item-tamanho button {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.item-tamanho button:hover {
+  color: #dc2626;
+}
+
 @media (max-width: 768px) {
   .admin-header {
     flex-direction: column;
